@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-Italic-VariableFont_wght.ttf");
+}
+
+:root {
+  --Green-200: hsl(148, 38%, 91%);
+  --Green-600: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 54%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-500: hsl(186, 15%, 59%);
+  --Grey-900: hsl(187, 24%, 22%);
+}
+
+* {
+  font-family: "Karla";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 16px;
+  margin: 1rem 0;
+}
+
+label::after {
+  content: "*";
+  color: var(--Green-600);
+  padding: 0.5rem;
+}
+
+i,
+.success {
+  display: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Green-200);
+}
+
+form {
+  background-color: var(--White);
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+  max-width: 375px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+.radio,
+textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Grey-500);
+}
+
+.radio {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.checkTerms {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 15rem;
+}
+
+button {
+  background-color: var(--Green-600);
+  border: none;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+input:hover,
+.radio:hover,
+button:hover {
+  cursor: pointer;
+}
+
+input:hover,
+.radio:hover {
+  border: 1px solid var(--Green-600);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--Green-600);
+}
+
+button:hover {
+  background-color: hsl(169, 81%, 17%);
+}
+
+.error {
+  display: block;
+  color: red;
+  margin: 0.5rem 0;
+}
+
+.radio.selected {
+  background-color: var(--Green-200);
+}
+
+input,
+textarea {
+  font-size: 16px;
+}
+
+.success {
+  background-color: var(--Grey-900);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: fixed;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.success p {
+  color: var(--Grey-500);
+}
+
+@media (min-width: 376px) {
+  form {
+    min-width: 60%;
+  }
+
+  .success {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .names {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .names > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .querys {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .radio {
+    width: 100%;
+    margin: 0;
+  }
+
+  .queryLabel {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  textarea {
+    height: 10rem;
+  }
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
